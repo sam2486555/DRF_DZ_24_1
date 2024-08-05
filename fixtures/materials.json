@@ -1,0 +1,44 @@
+[
+  {
+    "model": "materials.course",
+    "pk": 2,
+    "fields": {
+      "title": "Python",
+      "description": "Язык программирования",
+      "preview": ""
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 2,
+    "fields": {
+      "title": "Синтаксис",
+      "description": "Синтаксис",
+      "preview": "",
+      "url": null,
+      "course": 2
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 3,
+    "fields": {
+      "title": "Функции",
+      "description": "Функции",
+      "preview": "",
+      "url": null,
+      "course": 2
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 4,
+    "fields": {
+      "title": "Типы данных",
+      "description": null,
+      "preview": "",
+      "url": null,
+      "course": null
+    }
+  }
+]
