@@ -7,7 +7,7 @@
       "date": "2024-07-11",
       "course": 2,
       "lesson": null,
-      "payment_amount": 7000,
+      "payment_amount": 5000,
       "payment_method": "ONLINE"
     }
   },
@@ -19,7 +19,7 @@
       "date": "2024-07-10",
       "course": null,
       "lesson": 2,
-      "payment_amount": 700,
+      "payment_amount": 500,
       "payment_method": "CASH"
     }
   }
