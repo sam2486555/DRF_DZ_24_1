@@ -19,7 +19,7 @@ class CourseSerializer(ModelSerializer):
 
     def get_course_subscription(self, obj):
         """ Метод вывода подписан ли пользователь на курс """
-        return Subscription.objects.filter(course_subscription=obj, user=self.context['request'].user).exists()
+        return Subscription.objects.filter(course=obj, user=self.context['request'].user).exists()
 
     def get_lessons_count(self, instance):
         return instance.lesson_set.count()
