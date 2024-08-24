@@ -10,3 +10,6 @@ django-stubs==5.0.2
 ipython==8.26.0
 djangorestframework-simplejwt==5.3.1
 coverage==7.6.0
+setuptools==71.1.0
+drf-yasg==1.21.7
+stripe==10.5.0
