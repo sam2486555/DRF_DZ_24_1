@@ -1,6 +1,5 @@
 from django.utils.decorators import method_decorator
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import status
 from rest_framework.generics import (CreateAPIView, DestroyAPIView,
                                      ListAPIView, RetrieveAPIView,
                                      UpdateAPIView, get_object_or_404,)
@@ -12,6 +11,7 @@ from materials.models import Course, Lesson, Subscription
 from materials.paginators import MaterialsPaginator
 from materials.serializer import CourseSerializer, LessonSerializer, SubscriptionSerializer
 from users.permissions import IsModer, IsOwner
+from materials.tasks import update_notification
 
 
 @method_decorator(name='list', decorator=swagger_auto_schema(
@@ -26,6 +26,11 @@ class CourseViewSet(ModelViewSet):
         course = serializer.save()
         course.owner = self.request.user
         course.save()
+
+    def perform_update(self, serializer):
+        instance = serializer.save()
+        update_notification.delay(instance.pk)
+        return instance
 
     def get_permissions(self):
         if self.action == 'create':
